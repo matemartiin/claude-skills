@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "mateo-skills",
+  "description": "Skills personales de Mateo para Claude Code",
+  "owner": {
+    "name": "Mateo Martin",
+    "email": "matemartiin@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "facultad",
+      "description": "Flujo de estudio universitario: resúmenes de estudio exhaustivos a partir de apuntes y prácticas, y transcripción de parciales/TPs con resoluciones plegables paso a paso. Pensado para vaults de Obsidian.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mateo Martin"
+      },
+      "source": "./plugins/facultad",
+      "category": "productivity",
+      "homepage": "https://github.com/matemartiin/claude-skills/tree/main/plugins/facultad"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: creating-study-summaries
-description: Use when the user (a university/facultad student) wants a comprehensive study summary ("resumen") for a course built from theory notes ("apuntes") and practice guides ("prácticas") so they can solve every exercise in the guides using only the summary — also when expanding, clarifying, auditing, or adding graphics to such a summary.
+description: Use when the user (a university/facultad student) wants a comprehensive study summary ("resumen") for a course built from theory notes ("apuntes") and practice guides ("prácticas") so they can solve every exercise in the guides using only the summary — also when expanding, clarifying, auditing, or adding graphics to such a summary, or when the student says they don't understand a calculation or formula in one ("no entiendo las cuentas de...").
 ---
 
 # Crear resúmenes de estudio (facultad)
@@ -28,6 +28,19 @@ Cada tema/sección sigue **el mismo patrón**:
 **TODOS los ejercicios se resuelven PASO POR PASO** — no solo los difíciles, y nunca "en bloque" (mostrar la tabla/resultado final sin el camino no cuenta como resolución). Estructura: **🧭 Cómo pensarlo** (qué estrategia y por qué) → **micro-pasos numerados con el porqué de cada uno** → **resultado** → **✓ chequeo** (invariantes para auto-verificar: "el total no cambió", "la columna X siempre vale Y") → **⚡ atajo** si existe. En tablas multi-período (p.ej. dividendos acumulativos año a año): **fila por fila y celda por celda** — de dónde sale cada número. En asientos contables: **renglón por renglón** con el origen de cada importe.
 
 **Los porqués y analogías que NO están en el material de la cátedra se marcan** *(interpretación propia)* o 🧠; las conexiones con otras materias, con 🔗 (ej.: acción preferida ≈ bono → renta fija de Finanzas). Así el estudiante sabe qué puede citar en el parcial y qué es andamiaje.
+
+## Anatomía de cada fórmula (obligatorio)
+
+Una fórmula "explicada" no es una fórmula con el resultado al lado. **Cada fórmula del resumen se abre así**, en este orden (observado 2026-09 con ROA/ROE de ICG II: el estudiante tenía la fórmula, los números y el resultado, y aun así no entendía "de dónde sacás la $i$, la $t$"):
+
+1. **Cada símbolo, uno por uno**: qué es en palabras, **de dónde sale** (qué renglón del balance/EERR, qué slide/página lo define) y **la cuenta desde los datos** ("$t = \text{Imp.}/EBT$: la tasa que pagó de verdad; se divide por EBT porque el impuesto se calcula después de intereses → $10/28{,}5 = 35{,}088\%$"). Un símbolo que aparece en la fórmula sin este párrafo es un hueco.
+2. **El porqué de cada pieza** de la fórmula (por qué EBIT y no neta; por qué $(1-t)$; por qué activo total y no PN). Sin esto se memoriza sin entender.
+3. **Derivación** cuando la fórmula es compuesta o "sale de otra" (leverage, DuPont, WACC, cualquier identidad): el álgebra paso a paso desde la definición base, **un comentario por línea** (`aligned` con `&&`). El estudiante tiene que ver que no es un invento.
+4. **Mecanismos con tabla "sin / con / diferencia"**: cuando la fórmula describe un efecto (tax shield, leverage, dilución, absorción vs variable), el mismo caso **con y sin** el efecto lado a lado, columna diferencia, y lectura **fila por fila** de qué cambió y por qué. "Tax shield = interés × t" en una línea no alcanza.
+5. **El reparto**: cuando un total se divide entre partes (acreedores/accionistas, fisco/empresa, divisiones), tabla **puso / se lleva / rendimiento** y ✓ de que las partes suman el total. Es la intuición que hace clic antes que la fórmula.
+6. **Cerrar por dos vías**: el resultado por fórmula tiene que coincidir con el cálculo directo (ROE por leverage = neta/PN). Si no cierra, decí si es redondeo o error.
+
+**Precisión numérica (regla fija): 3 decimales en todo**, tasas en % con 3 decimales (35,088%, no 35%), **arrastradas sin redondear entre pasos**, y la convención declarada al inicio de la sección. Cuando la cátedra redondea (casi siempre), mostrá los dos: el exacto y "(slide: 21%)". Si la slide **fuerza** un número para que cierre (21% + 13% = 34%), ⚠️ explícita con tabla "versión exacta / t redondeada / slide" y una **regla para el parcial** (qué usar cuando el enunciado da la tasa vs cuando da el impuesto en pesos). Nunca mezcles precisiones dentro de una misma cadena: si el estudiante recalcula con tus propios valores intermedios tiene que llegar al mismo número.
 
 ## Baterías de ejercicios (guías, repasos, parciales)
 
@@ -67,6 +80,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 - **Notación exacta del curso** (no inventar).
 - **LaTeX** siempre; **español**; **Excalidraw, no Mermaid**; imágenes por iniciativa propia.
 - Para temas donde el estudiante es flojo (ej. estadística): desglosá **todo** paso por paso, desde cero, sin asumir base.
+- **Anatomía de cada fórmula + 3 decimales** (2026-09, ROA/ROE de ICG II: *"explicámelo mejor, explicando de dónde sacás la i, la t, cada fórmula; explicá mejor el tax shield; usá 3 decimales siempre"*): cada símbolo con su origen y su cuenta, el porqué de cada pieza, derivación de las fórmulas compuestas, mecanismos con tabla sin/con, el reparto del total, cierre por dos vías, y los redondeos de la cátedra señalados, no heredados. Ver sección "Anatomía de cada fórmula".
 
 ## Errores comunes (qué pasa SIN esto — observado en uso real)
 
@@ -91,6 +105,9 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 | Teoría y ejercicios sin cross-links | pide "agregá wikilinks que lleven directo al ejercicio" | 🎯 deep-links por sección, en ambas direcciones |
 | Adivinar un criterio de cátedra no explicado | resolución inventada sin aviso | transcribir + lectura marcada *(propia)* + "preguntar en clase" |
 | Responder una duda solo en el chat | la explicación no queda estudiable | archivarla como bloque 📓/🛠️ en la sección correspondiente |
+| Fórmula con símbolos "caídos del cielo" | *"no entiendo de dónde sacás la i, la t"* — tiene la fórmula y el resultado, no el camino | anatomía: cada símbolo con origen (slide/renglón) + cuenta desde los datos + porqué de cada pieza + derivación |
+| Efecto explicado en una línea (tax shield = interés × t) | *"explicá mejor el tax shield"* | tabla sin/con/diferencia + lectura fila por fila + reparto puso/se lleva |
+| Heredar el redondeo de la cátedra (21% + 13% = 34%) | el estudiante recalcula, le da 12,22% y no sabe quién tiene razón | 3 decimales arrastrados; ⚠️ con tabla exacta/redondeada/slide + regla para el parcial |
 
 ## Checklist
 
@@ -99,6 +116,8 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 - [ ] Confirmé orden y énfasis con el estudiante
 - [ ] Cada tema con 💡 idea (+🧠 analogía) → 📐/📋 def/prop (con su porqué) → 🛠️ método → ✍️ ejemplo (etiquetado 📕/📘/📓)
 - [ ] TODOS los ejercicios paso por paso (tablas fila-por-fila, asientos renglón-por-renglón) con ✓ chequeos
+- [ ] Cada fórmula abierta: símbolos con origen y cuenta, porqué de cada pieza, derivación si es compuesta, tabla sin/con para mecanismos, reparto del total, cierre por dos vías
+- [ ] 3 decimales en todo, arrastrados; convención declarada; redondeos de la cátedra marcados "(slide: X)" y los forzados con ⚠️
 - [ ] Cero omisiones: crucé el resumen contra el material fuente completo
 - [ ] Porqués/analogías propias marcadas *(interpretación propia)*; conexiones entre materias con 🔗
 - [ ] Baterías: enunciado transcripto + resolución plegable, marcas ✅/🤖, supuestos explícitos, ambigüedades con flag "preguntar en clase"

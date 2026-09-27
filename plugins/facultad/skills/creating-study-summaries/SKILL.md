@@ -80,6 +80,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 - **Notación exacta del curso** (no inventar).
 - **LaTeX** siempre; **español**; **Excalidraw, no Mermaid**; imágenes por iniciativa propia.
 - Para temas donde el estudiante es flojo (ej. estadística): desglosá **todo** paso por paso, desde cero, sin asumir base.
+- **Cada transformación de un número se justifica desde el soporte** (2026-09, umbral $X\le2{,}25\Rightarrow X\le2$ en Estadística: *"¿por qué baja al número entero más cercano?"*): cuando un paso convierte un número en otro (piso, techo, correr el índice en $F(a-1)$, complemento), no alcanza con decir "bajá al entero": mostrá en una **recta numérica** los valores posibles, listá cuáles cumplen la desigualdad, dejá una tabla de casos ($\le$/$<$/$>$/$\ge$, umbral entero vs no entero) y decí explícitamente qué **no** es (no es redondear al más cercano). Si la operación tiene nombre técnico (piso), se presenta como consecuencia, no como regla.
 - **Anatomía de cada fórmula + 3 decimales** (2026-09, ROA/ROE de ICG II: *"explicámelo mejor, explicando de dónde sacás la i, la t, cada fórmula; explicá mejor el tax shield; usá 3 decimales siempre"*): cada símbolo con su origen y su cuenta, el porqué de cada pieza, derivación de las fórmulas compuestas, mecanismos con tabla sin/con, el reparto del total, cierre por dos vías, y los redondeos de la cátedra señalados, no heredados. Ver sección "Anatomía de cada fórmula".
 
 ## Errores comunes (qué pasa SIN esto — observado en uso real)
@@ -107,6 +108,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 | Responder una duda solo en el chat | la explicación no queda estudiable | archivarla como bloque 📓/🛠️ en la sección correspondiente |
 | Fórmula con símbolos "caídos del cielo" | *"no entiendo de dónde sacás la i, la t"* — tiene la fórmula y el resultado, no el camino | anatomía: cada símbolo con origen (slide/renglón) + cuenta desde los datos + porqué de cada pieza + derivación |
 | Efecto explicado en una línea (tax shield = interés × t) | *"explicá mejor el tax shield"* | tabla sin/con/diferencia + lectura fila por fila + reparto puso/se lleva |
+| Paso aritmético "mágico" sin porqué (bajar al entero, correr el índice, tomar el piso) | *"¿por qué baja al número entero más cercano?"* — lo lee como un redondeo y no entiende de dónde sale | nunca "bajá al entero" a secas: recta numérica con los valores del soporte, listar cuáles cumplen la desigualdad, tabla de casos ($\le,<,>,\ge$; umbral entero vs no entero) y aclarar qué NO es (no es cercanía) |
 | Heredar el redondeo de la cátedra (21% + 13% = 34%) | el estudiante recalcula, le da 12,22% y no sabe quién tiene razón | 3 decimales arrastrados; ⚠️ con tabla exacta/redondeada/slide + regla para el parcial |
 
 ## Checklist

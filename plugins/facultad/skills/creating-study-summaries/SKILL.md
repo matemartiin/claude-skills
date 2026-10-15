@@ -25,7 +25,13 @@ Cada tema/sección sigue **el mismo patrón**:
 3. **🛠️ Cómo se resuelve** — el **método/receta paso a paso**, explicado (no solo la fórmula: el procedimiento).
 4. **✍️ Ejemplo** — resuelto mostrando **el porqué de cada paso**, etiquetando de dónde sale: **📕** (apunte/clase), **📘** (guía + número de ejercicio) o **📓** (apuntes del propio estudiante).
 
-**TODOS los ejercicios se resuelven PASO POR PASO** — no solo los difíciles, y nunca "en bloque" (mostrar la tabla/resultado final sin el camino no cuenta como resolución). Estructura: **🧭 Cómo pensarlo** (qué estrategia y por qué) → **micro-pasos numerados con el porqué de cada uno** → **resultado** → **✓ chequeo** (invariantes para auto-verificar: "el total no cambió", "la columna X siempre vale Y") → **⚡ atajo** si existe. En tablas multi-período (p.ej. dividendos acumulativos año a año): **fila por fila y celda por celda** — de dónde sale cada número. En asientos contables: **renglón por renglón** con el origen de cada importe.
+**TODOS los ejercicios se resuelven PASO POR PASO** — no solo los difíciles, y nunca "en bloque" (mostrar la tabla/resultado final sin el camino no cuenta como resolución). Estructura: **🧭 Cómo pensarlo** (qué estrategia y por qué) → **micro-pasos numerados con el porqué de cada uno** → **resultado** → **✓ chequeo** (invariantes para auto-verificar: "el total no cambió", "la columna X siempre vale Y") → **⚡ atajo** si existe. En tablas multi-período (p.ej. dividendos acumulativos año a año): **fila por fila y celda por celda** — de dónde sale cada número. En asientos contables: **renglón por renglón** con el origen de cada importe, y **siempre en formato de libro diario** (feedback 2026-10-15: *"hacé los asientos bien hechos, no simplemente como una línea, para que se vean mejor"*): un bloque de código con las cuentas deudoras arriba con su importe, las acreedoras debajo indentadas con `a …`, los importes alineados en columna y, cuando ayuda, un comentario `← de dónde sale` por renglón. **Nunca** un asiento en una sola línea tipo `Caja 100 / a Ventas 100` (ni en prosa, ni en una celda de tabla: si el asiento tiene que ir en una tabla, se saca de la tabla y se pone como bloque debajo). Formato:
+
+```
+Inversión en S                   17.800   ← VPP contable 11.800 + ajuste a VC 6.000
+Llave inversión en S              2.200   ← lo que pagó de más
+    a Bancos                                 20.000   ← el precio
+```
 
 **Los porqués y analogías que NO están en el material de la cátedra se marcan** *(interpretación propia)* o 🧠; las conexiones con otras materias, con 🔗 (ej.: acción preferida ≈ bono → renta fija de Finanzas). Así el estudiante sabe qué puede citar en el parcial y qué es andamiaje.
 
@@ -71,6 +77,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 - **NO solo fórmulas** — explicá el **método de resolución** y la **intuición**.
 - **Ejemplos completos, etiquetados** (📕/📘/📓), con el **porqué** de cada paso; cuando no se entienden, expandilos.
 - **TODOS los ejercicios paso por paso** (2026-08: "los ejercicios resolvelos paso por paso") — micro-pasos numerados, tablas fila-por-fila, asientos renglón-por-renglón, con ✓ chequeos.
+- **Los asientos, en formato de libro diario** (2026-10-15: *"hacé los asientos bien hechos, no simplemente como una línea, para que se vean mejor"*): bloque de código, deudoras arriba, acreedoras indentadas con `a …`, importes alineados, comentario `←` con el origen; nunca `Cuenta X / a Cuenta Y` en una línea.
 - **Cero omisiones** del material fuente (2026-08: "no omitas cosas de las diapositivas").
 - **Analogías y porqués en cada tema** (2026-08: "ejemplos, analogías, explicaciones de porque cada cosa"), marcados *(interpretación propia)*/🧠 si no son de la cátedra; 🔗 para conexiones entre materias.
 - **Todo apodo/metáfora se DEFINE la primera vez que aparece — o no se usa** (2026-08: *"no entiendo qué significan las panzas esas, o sea panza para arriba, abajo, costado"* — había usado "panza" para el solapamiento de dos círculos sin definirlo nunca). Un apodo sin definir es **peor** que el término técnico: el estudiante no puede ni buscarlo. Si usás una imagen coloquial: (a) definila explícitamente al presentarla, (b) mostrá **en un dibujo** a qué parte señala, (c) aclará qué **NO** significa si la palabra sugiere algo falso (orientación, movimiento, tamaño), y (d) usala **consistentemente** después. Antes de cerrar un resumen, grepeá tus propias metáforas y verificá que cada una tenga su definición.
@@ -91,6 +98,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 | Faltan tipos de ejercicio | no puede resolver parte de la guía | leer prácticas primero + auditoría |
 | Ejemplos en una línea | no se siguen | paso a paso con el porqué |
 | Ejercicio resuelto "en bloque" (tabla/resultado final sin el camino) | pide "resolvelo paso por paso" | fila por fila / celda por celda, micro-pasos numerados + ✓ chequeos |
+| Asiento contable en una sola línea (`Caja 100 / a Ventas 100`, en prosa o en una celda de tabla) | *"hacé los asientos bien hechos, no simplemente como una línea"* | bloque de código de libro diario: deudoras arriba, acreedoras indentadas con `a …`, importes alineados, `←` con el origen de cada importe |
 | Omitir contenido que parece administrativo (programa, evaluación, bullets sueltos) | pide "no omitas cosas de las diapositivas" | cero omisiones: todo entra, comprimido si hace falta |
 | Reglas enunciadas sin su porqué | se memoriza sin entender; pide "explicaciones de por qué cada cosa" | cada regla con razón económica/legal + analogía, marcadas si son propias |
 | Resumen monótono (solo texto corrido) | cuesta estudiarlo | variar: tablas con preguntas guía, ⚠️ trampas, diagramas, voz del estudiante |
@@ -118,6 +126,7 @@ Cuando la fuente es una batería de ejercicios (no teoría):
 - [ ] Confirmé orden y énfasis con el estudiante
 - [ ] Cada tema con 💡 idea (+🧠 analogía) → 📐/📋 def/prop (con su porqué) → 🛠️ método → ✍️ ejemplo (etiquetado 📕/📘/📓)
 - [ ] TODOS los ejercicios paso por paso (tablas fila-por-fila, asientos renglón-por-renglón) con ✓ chequeos
+- [ ] Ningún asiento en una sola línea: todos como bloque de libro diario (deudoras / `a` acreedoras indentadas / importes alineados / `←` origen)
 - [ ] Cada fórmula abierta: símbolos con origen y cuenta, porqué de cada pieza, derivación si es compuesta, tabla sin/con para mecanismos, reparto del total, cierre por dos vías
 - [ ] 3 decimales en todo, arrastrados; convención declarada; redondeos de la cátedra marcados "(slide: X)" y los forzados con ⚠️
 - [ ] Cero omisiones: crucé el resumen contra el material fuente completo
